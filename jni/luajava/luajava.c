@@ -193,6 +193,7 @@ void checkError(JNIEnv *javaEnv, lua_State *L) {
     jobject jstr;
     const char *cStr;
 
+    (*javaEnv)->ExceptionDescribe(javaEnv);
     (*javaEnv)->ExceptionClear(javaEnv);
     jstr = (*javaEnv)->CallObjectMethod(javaEnv, exp, get_message_method);
 
